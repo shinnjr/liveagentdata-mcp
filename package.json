@@ -1,0 +1,15 @@
+{
+  "name": "@shinnjr/liveagentdata-mcp",
+  "version": "1.0.0",
+  "description": "Lightweight STDIO & HTTP MCP bridge for LiveAgentData, LiveEndpoints, and 10 vertical public-record telemetry sites.",
+  "type": "module",
+  "bin": {
+    "liveagentdata-mcp": "./bin/liveagentdata-mcp.mjs"
+  },
+  "scripts": {
+    "test": "node --test test/mcp.test.mjs"
+  },
+  "keywords": ["mcp", "ai-agents", "telemetry", "public-records", "sec-edgar"],
+  "author": "James Shinn",
+  "license": "MIT"
+}
