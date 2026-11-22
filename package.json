@@ -1,15 +1,20 @@
 {
   "name": "@shinnjr/liveagentdata-mcp",
-  "version": "1.0.0",
-  "description": "Lightweight STDIO & HTTP MCP bridge for LiveAgentData, LiveEndpoints, and 10 vertical public-record telemetry sites.",
+  "version": "1.1.0",
+  "description": "STDIO & Streamable HTTP MCP bridge for LiveAgentData, LiveEndpoints, TinkerMCP, and 12 public-record telemetry sites.",
   "type": "module",
+  "homepage": "https://liveagentdata.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shinnjr/liveagentdata-mcp.git"
+  },
   "bin": {
     "liveagentdata-mcp": "./bin/liveagentdata-mcp.mjs"
   },
   "scripts": {
     "test": "node --test test/mcp.test.mjs"
   },
-  "keywords": ["mcp", "ai-agents", "telemetry", "public-records", "sec-edgar"],
+  "keywords": ["mcp", "mcp-server", "ai-agents", "telemetry", "public-records", "sec-edgar"],
   "author": "James Shinn",
   "license": "MIT"
 }

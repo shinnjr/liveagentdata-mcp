@@ -24,4 +24,15 @@ test("handleJsonRpcMessage responds cleanly to initialize, tools/list, and tools
     fakeFetch
   );
   assert.match(callRes.result.content[0].text, /"count":5/);
+
+  const trustRes = await handleJsonRpcMessage(
+    { jsonrpc: "2.0", id: 4, method: "tools/call", params: { name: "check_supply_chain_trust", arguments: { q: "claude-code" } } },
+    {},
+    async (url) => {
+      assert.match(url, /https:\/\/agentwhitelist\.com\/v1\/check\?q=claude-code/);
+      return new Response(JSON.stringify({ verdict: "GO", trust_points: 95 }), { status: 200 });
+    }
+  );
+  assert.match(trustRes.result.content[0].text, /"verdict":"GO"/);
+  assert.equal(await handleJsonRpcMessage({ jsonrpc: "2.0", method: "notifications/initialized" }), null);
 });
