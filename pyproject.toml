@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.24.0"]
+build-backend = "hatchling.build"
+
+[project]
+name = "liveagentdata"
+version = "1.1.0"
+description = "STDIO MCP bridge and CLI client for LiveAgentData, LiveGovContracts, EnterpriseSalesData, HealthcareDataFeeds, and TinkerMCP."
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+authors = [{ name = "James Shinn" }]
+keywords = ["mcp", "ai-agents", "telemetry", "public-records", "sec-edgar", "usaspending", "openfda"]
+classifiers = [
+  "Development Status :: 5 - Production/Stable",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+]
+
+[project.urls]
+Homepage = "https://liveagentdata.com"
+"Gov Contracts" = "https://livegovcontracts.com"
+"Corporate Registry" = "https://enterprisesalesdata.com"
+"TinkerMCP Studio" = "https://tinkermcp.com"
+Repository = "https://github.com/shinnjr/liveagentdata-mcp"
+
+[project.scripts]
+liveagentdata = "liveagentdata.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/liveagentdata"]
