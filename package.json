@@ -1,6 +1,6 @@
 {
   "name": "@shinnjr/liveagentdata-mcp",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "STDIO & Streamable HTTP MCP bridge for LiveAgentData, LiveEndpoints, TinkerMCP, and 12 public-record telemetry sites.",
   "type": "module",
   "homepage": "https://liveagentdata.com",
@@ -8,6 +8,12 @@
     "type": "git",
     "url": "https://github.com/shinnjr/liveagentdata-mcp.git"
   },
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE",
+    "llms-install.md"
+  ],
   "bin": {
     "liveagentdata-mcp": "./bin/liveagentdata-mcp.mjs"
   },

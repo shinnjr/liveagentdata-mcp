@@ -1,5 +1,7 @@
 #!/usr/bin/env node
+import fs from "node:fs";
 import readline from "node:readline";
+import { pathToFileURL } from "node:url";
 
 export const VERTICAL_HOSTS = [
   "liveagentdata.com",
@@ -121,7 +123,8 @@ async function main() {
   console.log("liveagentdata-mcp ready. Pipe MCP JSON-RPC over stdin or run --discover --query edgar");
 }
 
-if (import.meta.url === `file://${process.argv[1]}`) {
+const isMain = Boolean(process.argv[1]) && import.meta.url === pathToFileURL(fs.realpathSync(process.argv[1])).href;
+if (isMain) {
   main().catch((err) => {
     console.error(err.message);
     process.exit(1);

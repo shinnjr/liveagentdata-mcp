@@ -19,7 +19,7 @@ VERTICAL_HOSTS = (
     "altdatafeeds.com",
     "livepoliticaldata.com",
 )
-USER_AGENT = "liveagentdata-py/1.1.0"
+USER_AGENT = "liveagentdata-py/1.2.0"
 
 
 def discover_endpoints(query: str = "", base_url: str = "https://liveagentdata.com", timeout: float = 12.0) -> dict:

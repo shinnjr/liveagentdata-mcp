@@ -16,24 +16,29 @@ Supports 28 live public-record telemetry tools via Streamable HTTP MCP or local 
 }
 ```
 
-## Option 2: Local Node.js STDIO MCP Server
+## Option 2: 1-Line Node.js STDIO MCP Server (`npx` Directly From GitHub)
 
 Requires Node.js 18+:
-
-```bash
-git clone https://github.com/shinnjr/liveagentdata-mcp.git
-cd liveagentdata-mcp
-node bin/liveagentdata-mcp.mjs --mcp
-```
-
-Add to `cline_mcp_settings.json`, `claude_desktop_config.json`, or `.cursor/mcp.json`:
 
 ```json
 {
   "mcpServers": {
     "liveagentdata": {
-      "command": "node",
-      "args": ["/path/to/liveagentdata-mcp/bin/liveagentdata-mcp.mjs", "--mcp"]
+      "command": "npx",
+      "args": ["--yes", "github:shinnjr/liveagentdata-mcp", "--mcp"]
+    }
+  }
+}
+```
+
+## Option 3: 1-Line Python STDIO MCP Server (`uvx` / `pip`)
+
+```json
+{
+  "mcpServers": {
+    "liveagentdata": {
+      "command": "uvx",
+      "args": ["--from", "git+https://github.com/shinnjr/liveagentdata-mcp.git", "liveagentdata", "--mcp"]
     }
   }
 }
